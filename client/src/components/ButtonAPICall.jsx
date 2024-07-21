@@ -25,7 +25,7 @@ function ButtonAPICall() {
 
   return (
     <div>
-      <button onClick={fun}>data</button>
+      <button onClick={fun}>Button</button>
       {data}
     </div>
   );
