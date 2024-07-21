@@ -2,7 +2,7 @@
 
 In this template flask is coonected as a backend service for a react app
 
-How to use the teamplate
+## How to use the teamplate
 
 1. clone the project\
    `git clone https://github.com/Sehaj-kahlon/React-flask-template.git`
@@ -13,7 +13,7 @@ How to use the teamplate
 4. run the app\
    `npm run start`
 
-open other terminal
+## open other terminal
 
 1. navigate to the server folder\
    `cd flask-server `
@@ -26,6 +26,6 @@ open other terminal
 5. Run the file\
    `python localhost.py`
 
-how to connect React app from flask backend
+### how to connect React app from flask backend
 
 refre video: https://youtu.be/7LNl2JlZKHA?feature=shared
