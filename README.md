@@ -43,7 +43,7 @@ In this template flask is connected as a backend service for a react app
    ```
 
 3. open virtual environment - windows
-
+    
    ```bash
    .\venv\Scripts\activate
    ```
@@ -55,10 +55,13 @@ In this template flask is connected as a backend service for a react app
    ```
 
 5. Run the file
+    before running the file mae sure u are inside the virtual environment
 
    ```bash
    python localhost.py
    ```
+
+try using gpt if getting error while running the localhost.py 😝
 
 ### how to connect React app from flask backend
 

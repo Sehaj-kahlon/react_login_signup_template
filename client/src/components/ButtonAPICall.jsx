@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "antd";
 
 function ButtonAPICall() {
   const [data, setData] = useState(null);
@@ -25,7 +26,7 @@ function ButtonAPICall() {
 
   return (
     <div>
-      <button onClick={fun}>Button</button>
+      <Button onClick={fun}>Button</Button>
       {data}
     </div>
   );
