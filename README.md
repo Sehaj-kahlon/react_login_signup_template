@@ -5,7 +5,7 @@ In this template flask is coonected as a backend service for a react app
 ## How to use the teamplate
 
 1. clone the project\
-   `git clone https://github.com/Sehaj-kahlon/React-flask-template.git`
+   ```git clone https://github.com/Sehaj-kahlon/React-flask-template.git```
 2. navigate to the react app\
     `cd client`
 3. install dependencies\
