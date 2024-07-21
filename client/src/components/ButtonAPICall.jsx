@@ -26,8 +26,11 @@ function ButtonAPICall() {
 
   return (
     <div>
-      <Button onClick={fun}>Button</Button>
-      {data}
+      <div>
+        <Button onClick={fun}>Button</Button>
+        {data}
+      </div>
+      <div>open Network tab in inspect element to see the api calls</div>
     </div>
   );
 }
