@@ -1,8 +1,8 @@
 # React + Flask template
 
-In this template flask is coonected as a backend service for a react app
+In this template flask is connected as a backend service for a react app
 
-## How to use the teamplate
+## How to use the template
 
 1. clone the project
 
