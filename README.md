@@ -6,24 +6,24 @@ How to use the teamplate
 
 1. clone the project\
    `git clone https://github.com/Sehaj-kahlon/React-flask-template.git`
-2. navigate to the react app
+2. navigate to the react app\
     `cd client`
-3. install dependencies
+3. install dependencies\
    `npm i`
-4. run the app
+4. run the app\
    `npm run start`
 
 open other terminal
 
-1. navigate to the server folder
+1. navigate to the server folder\
    `cd flask-server `
-2. create virtual environment - for windows
+2. create virtual environment - for windows\
    `python -m venv venv`
-3. open virtual environment - windows
+3. open virtual environment - windows\
    `.\venv\Scripts\activate`
-4. install dependencies
+4. install dependencies\
    `pip install -r requirements.txt`
-5. Run the file
+5. Run the file\
    `python localhost.py`
 
 how to connect React app from flask backend
