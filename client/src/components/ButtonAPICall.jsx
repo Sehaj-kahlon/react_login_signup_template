@@ -28,7 +28,7 @@ function ButtonAPICall() {
     <div>
       <div>
         <Button onClick={fun}>Button</Button>
-        {data}
+        {error ? <p>Error: {error}</p> : <div>{data}</div> }
       </div>
       <div>open Network tab in inspect element to see the api calls</div>
     </div>
