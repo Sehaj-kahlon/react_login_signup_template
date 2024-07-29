@@ -54,7 +54,7 @@ In this template flask is connected as a backend service for a react app
    pip install -r requirements.txt
    ```
 
-5. Run the file
+5. run the file
     before running the file mae sure u are inside the virtual environment
 
    ```bash
