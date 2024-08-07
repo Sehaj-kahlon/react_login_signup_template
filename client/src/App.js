@@ -1,14 +1,25 @@
 import React from "react";
-import UseEffectCall from "./components/useEffectCall";
-import ButtonAPICall from "./components/ButtonAPICall";
-import POSTAPICall from "./components/POSTAPICall";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
+import SignUp from "./components/register";
 function App() {
   return (
-    <div>
-      <UseEffectCall />
-      <ButtonAPICall />
-      <POSTAPICall />
+    <Router>
+    <div className="App">
+      <div className="auth-wrapper">
+        <div className="auth-inner">
+          <Routes>
+            <Route path="/register" element={<SignUp />} />
+          </Routes>
+        </div>
+      </div>
     </div>
+  </Router>
   );
 }
 
