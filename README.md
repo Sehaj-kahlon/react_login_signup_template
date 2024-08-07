@@ -47,7 +47,12 @@ In this template flask is connected as a backend service for a react app
    ```bash
    .\venv\Scripts\activate
    ```
+   
+   - mac 
 
+   ```bash
+   source venv/bin/activate
+   ```
 4. install dependencies
 
    ```bash
