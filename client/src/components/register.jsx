@@ -3,7 +3,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "./firebase";
 import { setDoc, doc } from "firebase/firestore";
 import { Form, Input } from "antd";
-import { toast } from "react-toastify"
+import { toast } from "react-toastify";
 
 function SignUp() {
   const [email, setEmail] = useState("");
@@ -11,6 +11,17 @@ function SignUp() {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const handleRegister = async (e) => {
+    const extractErrorMessage = (errorMsg) => {
+      const errorMap = {
+        "auth/email-already-in-use": "Email already in use",
+        "auth/weak-password": "Password should be at least 6 characters",
+        "auth/invalid-email": "Invalid Email",
+      };
+      const match = errorMsg.match(/\(([^)]+)\)/);
+      const errorCode = match ? match[1] : null;
+
+      return errorMap[errorCode] || errorMsg;
+    };
     e.preventDefault();
     try {
       await createUserWithEmailAndPassword(auth, email, password);
@@ -30,7 +41,8 @@ function SignUp() {
       });
     } catch (error) {
       console.log(error.message);
-      toast.error(error.message, {
+      const errorMessage = extractErrorMessage(error.message);
+      toast.error(errorMessage, {
         position: "bottom-center",
       });
     }
