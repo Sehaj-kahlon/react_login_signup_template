@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const extractErrorMessage = (errorMsg) => {
     const errorMap = {
       "auth/invalid-credential": "Invalid credentials",
@@ -20,10 +21,11 @@ function Login() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       console.log("User logged in Successfully");
-      window.location.href = "/profile";
       toast.success("User logged in Successfully", {
         position: "top-center",
       });
+      await delay(2000);
+      window.location.href = "/profile";
     } catch (error) {
       console.log(error.message);
       const errorMessage = extractErrorMessage(error.message);
@@ -69,7 +71,7 @@ function Login() {
           </button>
         </div>
         <p className="forgot-password text-right">
-          New user <a href="/register">Register Here</a>
+          New user? <a href="/register">Register Here</a>
         </p>
       </form>
     </div>

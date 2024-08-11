@@ -10,11 +10,13 @@ function SignUp() {
   const [password, setPassword] = useState("");
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
+  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const handleRegister = async (e) => {
     const extractErrorMessage = (errorMsg) => {
       const errorMap = {
         "auth/email-already-in-use": "Email already in use",
         "auth/weak-password": "Password should be at least 6 characters",
+        "auth/missing-email": "Please enter email",
         "auth/invalid-email": "Invalid Email",
       };
       const match = errorMsg.match(/\(([^)]+)\)/);
@@ -39,6 +41,8 @@ function SignUp() {
       toast.success("User Registered Successfully!!", {
         position: "top-center",
       });
+      await delay(2000);
+      window.location.href = "/profile";
     } catch (error) {
       console.log(error.message);
       const errorMessage = extractErrorMessage(error.message);

@@ -13,30 +13,58 @@ import Profile from "./components/profile";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { auth } from "./components/firebase";
+
+function AuthLayout({ children }) {
+  return (
+    <div className="auth-wrapper">
+      <div className="auth-inner">{children}</div>
+    </div>
+  );
+}
 function App() {
   const [user, setUser] = useState();
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       setUser(user);
+      console.log(user);
     });
   });
+
   return (
     <Router>
       <div className="App">
-        <div className="auth-wrapper">
-          <div className="auth-inner">
-            <Routes>
-              <Route
-                path="/"
-                element={user ? <Navigate to="/profile" /> : <SignUp />}
-              />
-              <Route path="/register" element={<SignUp />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/profile" element={<Profile />} />
-            </Routes>
-            <ToastContainer />
-          </div>
-        </div>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              user ? (
+                <Navigate to="/profile" />
+              ) : (
+                <AuthLayout>
+                  <Login />
+                </AuthLayout>
+              )
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <AuthLayout>
+                <SignUp />
+              </AuthLayout>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <AuthLayout>
+                <Login />
+              </AuthLayout>
+            }
+          />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+        <ToastContainer />
       </div>
     </Router>
   );

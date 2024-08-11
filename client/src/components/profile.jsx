@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { auth, db } from "./firebase";
 import { doc, getDoc } from "firebase/firestore";
+import "./components.css";
 function Profile() {
   const [userDetails, setUserDetails] = useState(null);
+  const [showMenu, setShowMenu] = useState(false);
   const fetchUserData = async () => {
     auth.onAuthStateChanged(async (user) => {
       console.log(user);
@@ -30,31 +32,44 @@ function Profile() {
       console.error("Error logging out:", error.message);
     }
   };
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
   return (
-    <div>
+    <nav className="navbar navbar-light bg-light">
       {userDetails ? (
-        <div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            {/* <img
-              src={userDetails.photo}
-              width={"40%"}
-              style={{ borderRadius: "50%" }}
-            /> */}
-          </div>
-          <h3>Welcome {userDetails.firstName} 🙏🙏</h3>
-          <div>
-            <p>Email: {userDetails.email}</p>
-            <p>First Name: {userDetails.firstName}</p>
-            {/* <p>Last Name: {userDetails.lastName}</p> */}
-          </div>
-          <button className="btn btn-primary" onClick={handleLogout}>
-            Logout
+        <div className="user-data">
+          <button className="btn" onClick={toggleMenu}>
+            <i className="fas fa-user-circle fa-2x"></i>
           </button>
+          {showMenu && (
+            <div
+              className="dropdown-menu dropdown-menu-right show user-data-menu"
+              style={{
+                position: "absolute",
+                right: 0,
+                top: "100%",
+                display: "block",
+              }}
+            >
+              <p className="dropdown-item disabled">
+                Welcome, {userDetails.firstName}
+              </p>
+              <p className="dropdown-item">Email: {userDetails.email}</p>
+              <p className="dropdown-item">
+                First Name: {userDetails.firstName}
+              </p>
+              <button className="dropdown-item" onClick={handleLogout}>
+                Logout&nbsp;
+                <i className="fa-solid fa-arrow-right-from-bracket"></i>
+              </button>
+            </div>
+          )}
         </div>
       ) : (
-        <p>Loading...</p>
+        "Fetching user details..."
       )}
-    </div>
+    </nav>
   );
 }
 
