@@ -1,7 +1,7 @@
 {
   "name": "clinet",
   "version": "0.1.0",
-  "homepage": "https://Sehaj-kahlon.github.io/",
+  "homepage": "https://Sehaj-kahlon.github.io/react_login_signup_template",
   "private": true,
   "dependencies": {
     "@babel/runtime": "^7.25.0",

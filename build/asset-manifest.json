@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.d39aeb60.css",
-    "main.js": "/static/js/main.eb676c7f.js",
-    "static/js/453.e404c7d1.chunk.js": "/static/js/453.e404c7d1.chunk.js",
-    "index.html": "/index.html",
-    "main.d39aeb60.css.map": "/static/css/main.d39aeb60.css.map",
-    "main.eb676c7f.js.map": "/static/js/main.eb676c7f.js.map",
-    "453.e404c7d1.chunk.js.map": "/static/js/453.e404c7d1.chunk.js.map"
+    "main.css": "/react_login_signup_template/static/css/main.d39aeb60.css",
+    "main.js": "/react_login_signup_template/static/js/main.770dafa4.js",
+    "static/js/453.e404c7d1.chunk.js": "/react_login_signup_template/static/js/453.e404c7d1.chunk.js",
+    "index.html": "/react_login_signup_template/index.html",
+    "main.d39aeb60.css.map": "/react_login_signup_template/static/css/main.d39aeb60.css.map",
+    "main.770dafa4.js.map": "/react_login_signup_template/static/js/main.770dafa4.js.map",
+    "453.e404c7d1.chunk.js.map": "/react_login_signup_template/static/js/453.e404c7d1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d39aeb60.css",
-    "static/js/main.eb676c7f.js"
+    "static/js/main.770dafa4.js"
   ]
 }
