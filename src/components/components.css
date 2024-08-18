@@ -6,3 +6,11 @@
 .user-data-menu {
   padding-right: 10px;
 }
+.googleSignIn {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}

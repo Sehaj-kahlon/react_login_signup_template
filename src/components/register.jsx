@@ -35,6 +35,7 @@ function SignUp() {
           email: user.email,
           firstName: fname,
           lastName: lname,
+          photo: "",
           createdAt: new Date(),
         });
       }
